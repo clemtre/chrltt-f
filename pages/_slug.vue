@@ -1,13 +1,15 @@
 <template>
   <div>
+    <nuxt-link :to="prev.slug"><- {{prev.translations[0].titre}}</nuxt-link><br>
+    <nuxt-link :to="next.slug">{{next.translations[0].titre}} -></nuxt-link><br>
     <nuxt-link to="/">maison</nuxt-link>
     <h1>
       {{ projet.translations[0].titre }}
     </h1>
-    <p>
-      {{ projet.translations[0].corps }}
-
-    </p>
+    <div v-html="$md.render(`${projet.translations[0].corps}` )"></div>
+    <div v-for="(image, id) in projet.images" :key="id">
+      <img :src="`${$config.apiUrl}assets/${image.directus_files_id}`" alt="">
+    </div>
   </div>
 </template>
 
@@ -16,7 +18,9 @@ export default {
   data() {
     return{
       projet: {
-      }
+      },
+      prev : '',
+      next : ''
 
     }
   },
@@ -24,6 +28,8 @@ export default {
     this.projet = this.$store.state.Projets.find(
       (x) => x.slug === this.$route.params.slug
     );
+    this.prev = this.$store.state.Projets.find((x) => x.id - 1 === this.projet.id ) || this.$store.state.Projets[0]
+    this.next = this.$store.state.Projets.find((x) => x.id + 1 === this.projet.id ) || this.$store.state.Projets[this.$store.state.Projets.length - 1]
   },
 };
 </script>

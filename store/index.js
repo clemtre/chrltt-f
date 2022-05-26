@@ -36,6 +36,13 @@ export const mutations = {
 		data = this.$colorMode.preference
 	},
 	SORT_FETCH(state, data) {
+		for(const projet of data.Projets.data){
+			projet.elephant = 'a'
+			if(projet.translations[0].corps){
+				// projet.translations[0].corpsMd = $md.render(projet.translations[0].corps) 
+				// 
+			}
+		}
 		/*
 		for (const projet of data.Projets.data) {
 
