@@ -3,6 +3,7 @@ export const state = () => ({
 	ui: [
 		{ nom: 'anglais', on: true}, // DOIT RESTER EN INDEX 0
 		{ nom: 'tags' },
+		{ nom: 'bio', on: false}
 	],
 	filters : [],
 

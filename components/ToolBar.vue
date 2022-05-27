@@ -3,6 +3,9 @@
     <button @click="set('anglais')">
       {{ this.getName("anglais").on ? "FR" : "EN" }}
     </button>
+      <button @click="set('bio')">
+        {{ this.getName("anglais").on ? "à propos" : "about" }}
+      </button>
     <div class="tags-ctn" v-if="this.$route.path === '/'">
       <button
         v-for="tag in $store.state.Tags"
@@ -12,7 +15,9 @@
       >
         {{ lang ? tag.tag : tag.tag_en }}
       </button>
-      <button v-if="$store.state.filters.length" @click="remTags">X</button>
+      <button class="close" v-if="$store.state.filters.length" @click="remTags">
+        x
+      </button>
     </div>
   </div>
 </template>
@@ -53,5 +58,8 @@ export default {
 button {
   border-radius: 0;
   background-color: white;
+}
+.close {
+  transform: translateY(-50%);
 }
 </style>

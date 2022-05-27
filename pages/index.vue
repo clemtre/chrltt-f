@@ -1,5 +1,7 @@
 <template>
   <div>
+    <site-bio v-show="$store.state.ui[2].on"></site-bio>
+
     <div class="projet-ctn">
       <ul class="projet" v-for="(projet, id) of ProjetsFiltered" :key="id">
         <nuxt-link :to="projet.slug">
@@ -24,7 +26,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      showBio : false
+    };
   },
   computed: {
     ProjetsFiltered: function () {
