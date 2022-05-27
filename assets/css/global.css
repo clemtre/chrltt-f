@@ -1,3 +1,19 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 100px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 * {
     font-weight: 100;
 }
@@ -9,10 +25,10 @@ img {
 p {
     max-width: 900px;
     margin: 0;
+    text-align: left;
 }
 p:not(:first-child){
     text-indent: 20px;
-    text-align: justify;
 }
 p:last-of-type {
     margin-bottom: 20px;
