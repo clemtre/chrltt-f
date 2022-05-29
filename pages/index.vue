@@ -72,7 +72,7 @@ export default {
 }
 .thumbnail {
   max-width: 100%;
-  max-height: 30vh;
+  max-height: 40vh;
   box-sizing: border-box;
 }
 .thumbnail:hover {

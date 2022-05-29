@@ -1,45 +1,71 @@
 <template>
   <div class="ctn">
-      <hr>
-      <div class="bio" v-html="$md.render(`${$store.state.Bio.translations[lang].about}` )">
-    </div>
+    <div
+      class="bio"
+      v-html="$md.render(`${$store.state.Bio.translations[lang].about}`)"
+    ></div>
     <div class="img">
-
-        <img :src="`${$config.apiUrl}assets/${$store.state.Bio.photo_presentation.filename_disk}`" alt="" >
-    <h3>{{$store.state.Bio.photo_presentation_credits}}</h3>
+      <div>
+        <img
+          :src="`${$config.apiUrl}assets/${$store.state.Bio.photo_presentation.filename_disk}`"
+          alt=""
+        />
+        <h3>{{ $store.state.Bio.photo_presentation_credits }}</h3>
+      </div>
     </div>
-    <hr>
   </div>
 </template>
 
 <script>
 export default {
-computed:{
+  computed: {
     lang: function () {
       return this.$store.state.ui[0].on ? 1 : 0;
-    }
-}
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
 .ctn {
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    display: inline-block;
-    width: 100%;
+  margin-top: var(--gutter);
+  margin-bottom: var(--gutter);
+  display: inline-block;
+  width: fit-content;
+  display: flex;
+  border:  1px solid black;
+  border-left: none;
+  padding: 10px;
+  padding-left: 0;
 }
 .bio {
-    float: left;
+  float: left;
 }
 img {
-    max-width: 600px;
-    /* float: right; */
+  max-width: 600px;
+  /* float: right; */
 }
 h3 {
-    margin:0;
-    font-size: 12px;
-    margin-left: 900px;
+  margin: 0;
+  font-size: 12px;
+  /* margin-left: 900px; */
 }
-
+.force-left {
+  float: left;
+}
+hr {
+  /* margin-top: 20px; */
+  width: 100%;
+}
+hr,
+.bio >>> hr {
+  border: none;
+  border-top: 0.5px solid black;
+}
+.bio >>> hr {
+  width: calc(100% - var(--gutter));
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
 </style>
