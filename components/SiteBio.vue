@@ -33,6 +33,7 @@ export default {
   display: inline-block;
   width: fit-content;
   display: flex;
+  flex-wrap: wrap;
   border:  1px solid black;
   border-left: none;
   padding: 10px;
@@ -41,9 +42,9 @@ export default {
 .bio {
   float: left;
 }
-img {
+.img {
   max-width: 600px;
-  /* float: right; */
+  float: left;
 }
 h3 {
   margin: 0;

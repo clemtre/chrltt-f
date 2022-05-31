@@ -53,7 +53,11 @@ export default {
 }
 .tags-ctn {
   display: flex;
+  flex-wrap: wrap;
   width: fit-content;
+}
+.tags-ctn button:hover {
+  background-color: cornflowerblue;
 }
 button {
   border-radius: 0;

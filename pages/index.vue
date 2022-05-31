@@ -85,6 +85,7 @@ a {
 p {
   margin: 0;
   color: black;
+  width:100%
 }
 .titre {
   text-decoration: underline;
@@ -93,6 +94,6 @@ img:hover {
   max-height: 40vh;
 }
 ul{
-  padding-left:0
+  padding-left:var(--gutter)
 }
 </style>
