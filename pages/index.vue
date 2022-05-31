@@ -67,6 +67,7 @@ export default {
 
 <style scoped>
 .projet-ctn {
+  gap:calc(var(--gutter) * 2);
   display: flex;
   flex-wrap: wrap;
 }
@@ -90,5 +91,8 @@ p {
 }
 img:hover {
   max-height: 40vh;
+}
+ul{
+  padding-left:0
 }
 </style>

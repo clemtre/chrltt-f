@@ -1,23 +1,34 @@
 <template>
-  <div class="ctn" >
-      <hr>
-      pied de porc -- instagwam -- email -- copywight 2022
+  <div class="ctn">
+    <hr />
+    <p>
+      &copy;2022 &mdash;
+      <a target="_blank" :href="`https://www.instagram.com/${$store.state.Bio.instagram}`"
+        >@{{ $store.state.Bio.instagram }}</a>
+      &mdash; {{ $store.state.Bio.email }} 
+    </p>
   </div>
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
 <style scoped>
-    .ctn {
-        text-align: right;
-        position: absolute;
-        right:0;
-        left: 0;
-        bottom: 0;
-        padding-top: 100px;
-        padding-bottom:var(--gutter)
-    }
+a{
+    color:black
+}
+p {
+    float: right;
+    margin: 0;
+  text-align: right;
+}
+.ctn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 100px;
+  padding-bottom: var(--gutter);
+}
 </style>
