@@ -3,7 +3,7 @@
     <button @click="set('anglais')">
       {{ this.getName("anglais").on ? "FR" : "EN" }}
     </button>
-      <button @click="set('bio')">
+      <button @click="set('bio')" v-if="this.$route.path === '/'">
         {{ this.getName("anglais").on ? "à propos" : "about" }}
       </button>
     <div class="tags-ctn" v-if="this.$route.path === '/'">

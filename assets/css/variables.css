@@ -1,3 +1,6 @@
 :root {
-    --gutter: 10px
+    --gutter: 10px;
+    --principale : black;
+    --secondaire : black;
+    --interaction : darkred
 }

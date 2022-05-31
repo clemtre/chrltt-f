@@ -1,12 +1,14 @@
 <template>
   <div>
-    <nuxt-link :to="prev.slug"><- {{prev.translations[lang].titre}}</nuxt-link><br>
-    <nuxt-link :to="next.slug">{{next.translations[lang].titre}} -></nuxt-link><br>
-    <nuxt-link to="/">maison</nuxt-link>
+    <div class="nav">
+    <nuxt-link class="left" :to="prev.slug"><- {{prev.translations[lang].titre}}</nuxt-link>
+    <nuxt-link class="center" to="/">maison</nuxt-link>
+    <nuxt-link class="right" :to="next.slug">{{next.translations[lang].titre}} -></nuxt-link>
+    </div>
     <h1>
       {{ projet.translations[lang].titre }}
     </h1>
-    <div v-html="$md.render(`${projet.translations[lang].corps}` )"></div>
+    <div v-html="$md.render(`${projet.translations[lang].corps}`) || ''"></div>
     <div v-for="(image, id) in projet.images" :key="id">
       <img :src="`${$config.apiUrl}assets/${image.directus_files_id}`" alt="">
     </div>
@@ -39,5 +41,20 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  text-align: center;
+}
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.nav * {
+}
+.right {
+  justify-self: end;
+}
+.center {
+  justify-self: center;
+}
 </style>

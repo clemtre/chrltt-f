@@ -1,7 +1,6 @@
 <template>
   <div>
     <site-bio v-show="$store.state.ui[2].on"></site-bio>
-
     <div class="projet-ctn">
       <ul class="projet" v-for="(projet, id) of ProjetsFiltered" :key="id">
         <nuxt-link :to="projet.slug">
@@ -77,23 +76,25 @@ export default {
   box-sizing: border-box;
 }
 .thumbnail:hover {
-  border: 10px solid red;
+  border: 10px solid var(--interaction);
 }
 a {
   text-decoration: none;
 }
 p {
   margin: 0;
-  color: black;
+  color: var(--secondaire);
   width:100%
 }
 .titre {
   text-decoration: underline;
+  color: var(--principale)
 }
 img:hover {
   max-height: 40vh;
 }
 ul{
-  padding-left:var(--gutter)
+  padding-left:var(--gutter);
+  margin:0
 }
 </style>

@@ -17,15 +17,23 @@ body{
   box-sizing: inherit;
 }
 * {
-    font-weight: 100;
+    font-weight: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 img {
     max-width: 100%;
 }
 
-p {
+
+h1 {
+    margin: var(--gutter) 0;
+}
+
+h1, p, .nav {
     max-width: 900px;
+}
+p {
     margin: 0;
     text-align: left;
 }
