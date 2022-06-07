@@ -33,6 +33,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@assets/css/fonts.css',
     '@assets/css/variables.css',
     '@assets/css/global.css'
   ],

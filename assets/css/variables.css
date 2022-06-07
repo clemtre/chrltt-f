@@ -1,6 +1,7 @@
 :root {
     --gutter: 10px;
-    --principale : black;
-    --secondaire : black;
-    --interaction : darkred
+    --noir:black;
+    --principale :#124903;
+    --secondaire : #B4CAB5;
+    --interaction : #C2CEFF
 }

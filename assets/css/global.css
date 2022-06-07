@@ -8,7 +8,8 @@ body{
     position: relative;
     margin-bottom: 0;
     margin-top: 0;
-    padding-top: var(--gutter);
+    padding: var(--gutter);
+    padding-top: calc(var(--gutter) * 2);
     padding-bottom: 100px;
 }
 *,
@@ -19,6 +20,7 @@ body{
 * {
     font-weight: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Karla', sans-serif;
 }
 
 img {

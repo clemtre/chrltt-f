@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style>
+.ctn {
+  margin-bottom:var(--gutter)
+}
 .active {
   background-color: pink;
 }

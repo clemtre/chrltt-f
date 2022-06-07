@@ -9,8 +9,11 @@
       {{ projet.translations[lang].titre }}
     </h1>
     <div v-html="$md.render(`${projet.translations[lang].corps}`) || ''"></div>
-    <div v-for="(image, id) in projet.images" :key="id">
+    <div class="img-ctn">
+
+      <div v-for="(image, id) in projet.images" :key="id">
       <img :src="`${$config.apiUrl}assets/${image.directus_files_id}`" alt="">
+    </div>
     </div>
   </div>
 </template>
@@ -48,6 +51,17 @@ h1 {
 .nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+.img-ctn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+
+}
+img {
+  max-height: 95vh;
+float: left;
 }
 .nav * {
 }

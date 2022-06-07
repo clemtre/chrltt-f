@@ -3,9 +3,12 @@
     <hr />
     <p>
       &copy;2022 &mdash;
-      <a target="_blank" :href="`https://www.instagram.com/${$store.state.Bio.instagram}`"
-        >@{{ $store.state.Bio.instagram }}</a>
-      &mdash; {{ $store.state.Bio.email }} 
+      <a
+        target="_blank"
+        :href="`https://www.instagram.com/${$store.state.Bio.instagram}`"
+        >@{{ $store.state.Bio.instagram }}</a
+      >
+      &mdash; {{ $store.state.Bio.email }}
     </p>
   </div>
 </template>
@@ -15,12 +18,13 @@ export default {};
 </script>
 
 <style scoped>
-a{
-    color:black
+a {
+  color: black;
 }
 p {
-    float: right;
-    margin: 0;
+  float: right;
+  margin: 0;
+  margin-right: var(--gutter);
   text-align: right;
 }
 .ctn {
@@ -29,6 +33,6 @@ p {
   left: 0;
   bottom: 0;
   padding-top: 100px;
-  padding-bottom: var(--gutter);
+  padding-bottom: calc(var(--gutter)*2);
 }
 </style>

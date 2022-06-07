@@ -9,7 +9,6 @@
             <p>
               {{ projet.translations[lang].accroche }}
             </p>
-            <br />
             <img
               class="thumbnail"
               :src="`${$config.apiUrl}assets/${projet.miniature.filename_disk}`"
@@ -26,7 +25,7 @@
 export default {
   data() {
     return {
-      showBio : false
+      showBio: false,
     };
   },
   computed: {
@@ -34,13 +33,12 @@ export default {
       if (!this.$store.state.filters.length) {
         return this.$store.state.Projets;
       } else {
-        const filters = this.$store.state.filters
-        console.log(filters)
+        const filters = this.$store.state.filters;
+        console.log(filters);
         function filterByTag(obj) {
-          for(const tag of obj.tags){
-            if(filters.includes(tag.tags_CLEAN.id)){
-              return obj
-
+          for (const tag of obj.tags) {
+            if (filters.includes(tag.tags_CLEAN.id)) {
+              return obj;
             }
           }
         }
@@ -66,35 +64,56 @@ export default {
 
 <style scoped>
 .projet-ctn {
-  gap:calc(var(--gutter) * 2);
+  gap: calc(var(--gutter) * 2);
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  margin-left: var(--gutter);
 }
-.thumbnail {
-  max-width: 100%;
-  max-height: 40vh;
-  box-sizing: border-box;
-}
-.thumbnail:hover {
-  border: 10px solid var(--interaction);
-}
+
 a {
   text-decoration: none;
 }
+li {
+  width: 100%;
+}
 p {
+  line-height: 18px;
   margin: 0;
-  color: var(--secondaire);
-  width:100%
+  color: var(--noir);
+  max-width: 400px;
 }
 .titre {
   text-decoration: underline;
-  color: var(--principale)
+  color: var(--principale);
 }
 img:hover {
-  max-height: 40vh;
 }
-ul{
-  padding-left:var(--gutter);
-  margin:0
+.thumbnail {
+  margin-top: var(--gutter);
+  max-height: 500px;
+  /* width: 100%; */
+  object-fit: contain;
+  /* box-sizing: border-box; */
+  transition: 0.05s linear;
+  border-bottom: 0 solid var(--interaction);
+  box-sizing: content-box;
+  margin-bottom: calc(var(--gutter) * 2);
+}
+.thumbnail:hover {
+  border-bottom: calc(var(--gutter) * 2) solid var(--interaction);
+  margin-bottom: 0;
+}
+
+li::before {
+  /* content: 'pastille'; */
+}
+ul {
+  padding-left: var(--gutter);
+  margin: 0;
+}
+.projet {
+  /* height: 300px; */
+  width: auto;
 }
 </style>
