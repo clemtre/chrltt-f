@@ -70,17 +70,23 @@ export default {
   background-color: pink
 
 .tags-ctn
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  width: fit-content
   position: fixed
   top: calc(var(--gutter)*2)
+  left: calc(var(--gutter)*2)
+  width: calc(100% - var(--gutter)*4)
 
   & button:hover
     background-color: cornflowerblue
 
+.placeholder, .tags-ctn
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
 .placeholder
+  left: 0
+  width: 100%
+  left: 0
   position: static
   pointer-events: none
   opacity: 0
