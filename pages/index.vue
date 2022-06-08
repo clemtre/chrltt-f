@@ -9,6 +9,7 @@
             <p>
               {{ projet.translations[lang].accroche }}
             </p>
+            <!-- <tag-labels :data="projet"></tag-labels> -->
             <img
               class="thumbnail"
               :src="`${$config.apiUrl}assets/${projet.miniature.filename_disk}`"
@@ -34,7 +35,6 @@ export default {
         return this.$store.state.Projets;
       } else {
         const filters = this.$store.state.filters;
-        console.log(filters);
         function filterByTag(obj) {
           for (const tag of obj.tags) {
             if (filters.includes(tag.tags_CLEAN.id)) {
@@ -95,14 +95,15 @@ img:hover {
   /* width: 100%; */
   object-fit: contain;
   /* box-sizing: border-box; */
-  transition: 0.05s linear;
-  border-bottom: 0 solid var(--interaction);
-  box-sizing: content-box;
+  /* transition: 0.05s linear; */
+  box-sizing: border-box;
+  margin-left: calc(var(--gutter) * -1);
+  border: 0 solid var(--interaction);
+
   margin-bottom: calc(var(--gutter) * 2);
 }
-.thumbnail:hover {
-  border-bottom: calc(var(--gutter) * 2) solid var(--interaction);
-  margin-bottom: 0;
+.projet:hover .thumbnail {
+  border: calc(var(--gutter) * 1) solid var(--interaction);
 }
 
 li::before {

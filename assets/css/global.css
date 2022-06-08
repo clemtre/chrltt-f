@@ -32,8 +32,8 @@ h1 {
     margin: var(--gutter) 0;
 }
 
-h1, p, .nav {
-    max-width: 900px;
+h1, p, .nav, .bio {
+    max-width: var(--body);
 }
 p {
     margin: 0;
@@ -44,4 +44,8 @@ p:not(:first-child){
 }
 p:last-of-type {
     margin-bottom: 20px;
+}
+
+a {
+    color: var(--principale);
 }

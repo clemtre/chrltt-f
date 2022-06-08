@@ -20,31 +20,34 @@
 export default {
   computed: {
     lang: function () {
-      return this.$store.state.ui[0].on ? 1 : 0;
+      return this.$store.state.ui[0].on ? 0 : 1
     },
   },
-};
+}
 </script>
 
 <style scoped>
 .ctn {
   margin-top: var(--gutter);
   margin-bottom: var(--gutter);
-  display: inline-block;
-  width: fit-content;
+  /* max-width: fit-content; */
   display: flex;
+  max-width: fit-content;
   flex-wrap: wrap;
-  border:  1px solid black;
+  width: min(var(--body), 100%);
+  border: 1px solid black;
   border-left: none;
   padding: 10px;
   padding-left: 0;
+  gap: calc(var(--gutter));
 }
+
 .bio {
-  float: left;
+  width: var(--body);
+  /* padding-right: calc(var(--gutter) * 16); */
 }
 .img {
   max-width: 600px;
-  float: left;
 }
 h3 {
   margin: 0;
