@@ -83,6 +83,7 @@ export default {
 .placeholder
   position: static
   pointer-events: none
+  opacity: 0
 
 button
   border-radius: 0
