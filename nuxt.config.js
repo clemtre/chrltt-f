@@ -2,18 +2,9 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
 
-  env: {
-    apiUrl: process.env.API_URL,
-    baseUrl: process.env.BASE_URL,
-    // NODE_ENV: process.env.NODE_ENV
-  },
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
-    baseUrl: process.env.BASE_URL
-  },
-  privateRuntimeConfig: {
-    apiUrl: process.env.API_URL,
-    baseUrl: process.env.BASE_URL
+    CDN: process.env.CDN
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

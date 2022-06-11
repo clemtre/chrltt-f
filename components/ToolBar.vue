@@ -30,7 +30,7 @@
       <button @click="set('anglais')">
         {{ this.getName("anglais").on ? "FR" : "EN" }}
       </button>
-      <button @click="set('bio')">
+      <button @click="set('bio')" id="about">
         {{ this.getName("anglais").on ? "à propos" : "about" }}
       </button>
     </div>
@@ -93,9 +93,13 @@ export default {
 
 button
   border-radius: 0
-
-  height: calc( var(--gutter) * 4 )
+  border: none
+  background-color: #DDD
+  // height: calc( var(--gutter) * 4 )
     // background-color: white
+
+  &:nth-of-type(2n)
+    background-color: #EEE
 
 .meta-ctn
   display: flex
@@ -109,8 +113,10 @@ $width: 5px
 @for $a from 1 through 12
   .tags-ctn button:hover:nth-of-type(#{$a})
     background-color: var(--tag#{$a})
-    border: 1px solid var(--tag#{$a})
 
   .active:nth-of-type(#{$a})
     background-color: var(--tag#{$a})
+
+#about:hover
+  cursor: help
 </style>

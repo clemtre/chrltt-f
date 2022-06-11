@@ -27,7 +27,8 @@
     <div class="img-ctn">
       <div v-for="(image, id) in projet.images" :key="id">
         <img
-          :src="`${$config.apiUrl}assets/${image.directus_files_id}`"
+          :src="`${$config.CDN}image/fetch/w_1000,h_1000,c_limit/${$config.apiUrl}assets/${image.directus_files_id}`"
+
           alt=""
         />
       </div>
