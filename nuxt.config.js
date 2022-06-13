@@ -1,10 +1,17 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
-
+  env: {
+    apiUrl: process.env.API_URL,
+    CDN: process.env.CDN,
+  },
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
-    CDN: process.env.CDN
+    CDN: process.env.CDN,
+  },
+  privateRuntimeConfig: {
+    apiUrl: process.env.API_URL,
+    CDN: process.env.CDN,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -24,31 +31,29 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@assets/css/fonts.css',
-    '@assets/css/variables.css',
-    '@assets/css/global.css'
+    "@assets/css/fonts.css",
+    "@assets/css/variables.css",
+    "@assets/css/global.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~plugins/global.client.js'
-  ],
+  plugins: ["~plugins/global.client.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  // buildModules: ["@nuxt/image"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    "@nuxtjs/markdownit"
+    "@nuxtjs/markdownit",
   ],
 
   markdownit: {
-    runtime: true
+    runtime: true,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -59,4 +64,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-};
+}
