@@ -2,15 +2,15 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   env: {
-    apiUrl: process.env.API_URL,
+    API_URL: process.env.API_URL,
     CDN: process.env.CDN,
   },
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
+    API_URL: process.env.API_URL,
     CDN: process.env.CDN,
   },
   privateRuntimeConfig: {
-    apiUrl: process.env.API_URL,
+    API_URL: process.env.API_URL,
     CDN: process.env.CDN,
   },
 

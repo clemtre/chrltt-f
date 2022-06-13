@@ -7,7 +7,7 @@
     <div class="img">
       <div>
         <img
-          :src="`${$config.apiUrl}assets/${$store.state.Bio.photo_presentation.filename_disk}?width=1000`"
+          :src="`${$config.API_URL}assets/${$store.state.Bio.photo_presentation.filename_disk}?width=1000`"
           alt=""
         />
         <h3>{{ $store.state.Bio.photo_presentation_credits }}</h3>

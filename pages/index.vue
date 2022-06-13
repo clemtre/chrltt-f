@@ -17,7 +17,7 @@
             <!-- <tag-labels :data="projet"></tag-labels> -->
             <img
               class="thumbnail"
-              :src="`${$config.CDN}image/fetch/w_1000,h_1000,c_limit/${$config.apiUrl}assets/${projet.miniature.filename_disk}`"
+              :src="`${$config.CDN}image/fetch/w_1000,h_1000,c_limit/${$config.API_URL}assets/${projet.miniature.filename_disk}`"
               alt=""
             />
           </li>
