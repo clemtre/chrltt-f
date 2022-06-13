@@ -98,5 +98,5 @@ img
   $b: $a - 1
   .nav-lien:hover:nth-of-type(#{$b}n)
     color: var(--tag#{$a}) !important
-.nuxt-link-active
+// .nuxt-link-active
 </style>

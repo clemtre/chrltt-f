@@ -94,7 +94,7 @@ p
   text-decoration: underline
   color: var(--principale)
 
-img:hover
+// img:hover
 
 .thumbnail
   margin-top: var(--gutter)
@@ -113,7 +113,7 @@ img:hover
   .projet:hover &
     border: calc(var(--gutter) * 1) solid var(--interaction)
 
-li::before
+// li::before
   /* content: 'pastille'; */
 
 ul
@@ -124,7 +124,7 @@ ul
   /* height: 300px; */
   width: auto
 
-@for $a from 1 through 20
-  .thumbnail:nth-of-type(#{$a}n)
-    max-height:  #{300 + $a * 312312 % 400}px
+// @for $a from 1 through 20
+//   .thumbnail:nth-of-type(#{$a}n)
+//     max-height:  #{300 + $a * 312312 % 400}px
 </style>
