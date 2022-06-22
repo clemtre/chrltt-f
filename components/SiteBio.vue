@@ -1,5 +1,6 @@
 <template>
   <div class="ctn">
+    <button id="close" @click="set('bio')">X</button>
     <div
       class="bio"
       v-html="$md.render(`${$store.state.Bio.translations[lang].about}`)"
@@ -17,64 +18,85 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   computed: {
+    ...mapGetters({
+      getName: "getName",
+    }),
     lang: function () {
       return this.$store.state.ui[0].on ? 0 : 1;
+    },
+  },
+  methods: {
+    set: function (arg) {
+      this.$store.commit("SWITCH", this.getName(arg));
     },
   },
 };
 </script>
 
-<style scoped>
-.ctn {
-  margin-top: var(--gutter);
-  margin-bottom: var(--gutter);
-  /* max-width: fit-content; */
-  display: flex;
-  width: calc(var(--body) + var(--gutter) * 2 + 601px);
-  /* @media screen and (max-width: calc(var(--body) + var(--gutter) * 2 + 601px)) {
-    flex-direction: col;
-  } */
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* width: min(var(--body), 100%); */
-  border: 1px solid black;
-  border-left: none;
-  padding: 10px;
-  padding-left: 0;
-  gap: calc(var(--gutter));
-}
+<style lang="sass" scoped>
+.ctn
+  margin-top: var(--gutter)
+  margin-bottom: var(--gutter)
+  max-width: calc( 100%)
+  display: flex
+  width: fit-content
+  flex-direction: row
+  /* flex-wrap: wrap; */
+  border: 1px solid black
+  border-left: none
+  padding: 10px
+  padding-left: 0
+  gap: calc(var(--gutter))
+  @media screen and (max-width: 1020px)
+    flex-wrap: wrap
 
-.bio {
-  width: var(--body);
+#close
+  background: lightgrey
+  border: none
+  position: absolute
+  left: calc(100% - 30px)
+  transform: translateY(-31px)
+  width: 20px
+  height: 20px
+
+/* right: var(--gutter); */
+  /* top: var(--gutter) */
+
+.bio
+  width: var(--body)
   /* padding-right: calc(var(--gutter) * 16); */
-}
-.img {
-  max-width: 600px;
-}
-h3 {
-  margin: 0;
-  font-size: 12px;
+
+img
+  max-height: 70vh
+
+.img
+  max-width: 600px
+
+h3
+  margin: 0
+  font-size: 12px
   /* margin-left: 900px; */
-}
-.force-left {
-  float: left;
-}
-hr {
+
+.force-left
+  float: left
+
+hr
   /* margin-top: 20px; */
-  width: 100%;
-}
+  width: 100%
+
 hr,
-.bio >>> hr {
-  border: none;
-  border-top: 0.5px solid black;
-}
-.bio >>> hr {
-  width: calc(100% - var(--gutter));
-  margin: 10px;
-  margin-left: 0;
-  margin-right: 0;
-}
+.bio >>> hr
+  border: none
+  border-top: 0.5px solid black
+
+
+  &
+    width: calc(100% - var(--gutter))
+    margin: 10px
+    margin-left: 0
+    margin-right: 0
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="ctn" v-if="this.$route.path === '/'">
-    <div class="tags-ctn">
+  <div class="ctn" >
+    <div class="tags-ctn" v-if="this.$route.path === '/'">
       <button
         v-for="tag in $store.state.Tags"
         :key="tag.id"
@@ -13,7 +13,7 @@
         x
       </button>
     </div>
-    <div class="tags-ctn placeholder">
+    <div class="tags-ctn placeholder" v-if="this.$route.path === '/'">
       <button
         v-for="tag in $store.state.Tags"
         :key="tag.id"
@@ -30,7 +30,7 @@
       <button @click="set('anglais')">
         {{ this.getName("anglais").on ? "FR" : "EN" }}
       </button>
-      <button @click="set('bio')" id="about">
+      <button @click="set('bio')" id="about" v-if="this.$route.path === '/'">
         {{ this.getName("anglais").on ? "à propos" : "about" }}
       </button>
     </div>
@@ -72,7 +72,7 @@ export default {
 .tags-ctn
   position: fixed
   top: calc(var(--gutter)*2)
-  left: calc(var(--gutter)*2)
+  left: calc(var(--gutter)*2 - 2px)
   width: calc(100% - var(--gutter)*4)
 
   & button:hover
@@ -109,13 +109,13 @@ button
 .close
   // transform: translateY(-50%)
 
-// $width: 5px
-// @for $a from 1 through 12
-//   .tags-ctn button:hover:nth-of-type(#{$a})
-//     background-color: var(--tag#{$a})
+$width: 5px
+@for $a from 1 through 12
+  .tags-ctn button:hover:nth-of-type(#{$a})
+    background-color: var(--tag#{$a})
 
-//   .active:nth-of-type(#{$a})
-//     background-color: var(--tag#{$a})
+  .active:nth-of-type(#{$a})
+    background-color: var(--tag#{$a})
 
 #about:hover
   cursor: help

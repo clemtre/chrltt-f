@@ -34,6 +34,7 @@ h1 {
 }
 
 h1, p, .nav, .bio {
+    width: 100%;
     max-width: var(--body);
 }
 p {

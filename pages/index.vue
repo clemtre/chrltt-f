@@ -104,11 +104,9 @@ p
   /* box-sizing: border-box; */
   /* transition: 0.05s linear; */
   box-sizing: border-box
-  margin-left: calc(var(--gutter) * -1)
   border: 0 solid var(--interaction)
-
-  margin-bottom: calc(var(--gutter) * 2)
-
+  margin: calc(var(--gutter) * 2)
+  margin-left: calc( var(--gutter) * -1 )
 .projet:hover
   border: calc(var(--gutter) * 1) solid var(--interaction)
 
