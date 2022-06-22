@@ -20,10 +20,10 @@
 export default {
   computed: {
     lang: function () {
-      return this.$store.state.ui[0].on ? 0 : 1
+      return this.$store.state.ui[0].on ? 0 : 1;
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -32,9 +32,14 @@ export default {
   margin-bottom: var(--gutter);
   /* max-width: fit-content; */
   display: flex;
-  max-width: fit-content;
+  width: calc(var(--body) + var(--gutter) * 2 + 601px);
+  /* @media screen and (max-width: calc(var(--body) + var(--gutter) * 2 + 601px)) {
+    flex-direction: col;
+  } */
+  width: 100%;
+  flex-direction: row;
   flex-wrap: wrap;
-  width: min(var(--body), 100%);
+  /* width: min(var(--body), 100%); */
   border: 1px solid black;
   border-left: none;
   padding: 10px;

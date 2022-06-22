@@ -38,17 +38,17 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
+import { mapGetters } from "vuex";
 export default {
   methods: {
     remTags: function () {
-      this.$store.commit("REMOVE_TAGS")
+      this.$store.commit("REMOVE_TAGS");
     },
     setTag: function (arg) {
-      this.$store.commit("SWITCH_TAG", arg)
+      this.$store.commit("SWITCH_TAG", arg);
     },
     set: function (arg) {
-      this.$store.commit("SWITCH", this.getName(arg))
+      this.$store.commit("SWITCH", this.getName(arg));
     },
   },
   computed: {
@@ -56,13 +56,13 @@ export default {
       getName: "getName",
     }),
     lang: function () {
-      return this.$store.state.ui[0].on ? 1 : 0
+      return this.$store.state.ui[0].on ? 1 : 0;
     },
   },
-}
+};
 </script>
 
-<style scoped lang="sass">
+<style lang="sass" scoped>
 .ctn
   margin-bottom: var(--gutter)
 
@@ -109,13 +109,13 @@ button
 .close
   // transform: translateY(-50%)
 
-$width: 5px
-@for $a from 1 through 12
-  .tags-ctn button:hover:nth-of-type(#{$a})
-    background-color: var(--tag#{$a})
+// $width: 5px
+// @for $a from 1 through 12
+//   .tags-ctn button:hover:nth-of-type(#{$a})
+//     background-color: var(--tag#{$a})
 
-  .active:nth-of-type(#{$a})
-    background-color: var(--tag#{$a})
+//   .active:nth-of-type(#{$a})
+//     background-color: var(--tag#{$a})
 
 #about:hover
   cursor: help

@@ -2,35 +2,25 @@
   <div>
     <div class="nav">
       <nuxt-link to="/" class="nav-lien">←</nuxt-link>
-      <nuxt-link
-        class="nav-lien"
-        v-for="e in projets"
-        :key="e.id"
-        :to="e.slug"
-        >{{ e.translations[lang].titre }}</nuxt-link
-      >
+      <nuxt-link class="nav-lien" v-for="e in projets" :key="e.id" :to="e.slug">{{ e.translations[lang].titre }}
+      </nuxt-link>
     </div>
     <h1>
       {{ projet.translations[lang].titre }}
     </h1>
-    <div
-      v-html="
-        $md.render(
-          `${
-            projet.translations[lang].corps
-              ? projet.translations[lang].corps
-              : ''
-          }`
-        )
-      "
-    ></div>
+    <div v-html="
+      $md.render(
+        `${projet.translations[lang].corps
+          ? projet.translations[lang].corps
+          : ''
+        }`
+      )
+    "></div>
     <div class="img-ctn">
       <div v-for="(image, id) in projet.images" :key="id">
         <img
           :src="`${$config.CDN}image/fetch/w_1000,h_1000,c_limit/${$config.API_URL}assets/${image.directus_files_id}`"
-
-          alt=""
-        />
+          alt="" />
       </div>
     </div>
   </div>
@@ -77,7 +67,7 @@ h1
   flex-wrap: wrap
   gap: 0 var(--gutter)
 a
-  color: var(--noir) !important
+  color: var(--noir)
   margin: 0
   padding: 0
 .img-ctn

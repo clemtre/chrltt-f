@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p
+    <div
       class="nav-intro"
       v-html="$md.render($store.state.Bio.translations[lang].navigation)"
-    ></p>
+    ></div>
     <site-bio v-show="$store.state.ui[2].on"></site-bio>
     <div class="projet-ctn">
       <ul class="projet" v-for="(projet, id) of ProjetsFiltered" :key="id">
@@ -12,7 +12,6 @@
             <p class="titre">{{ projet.translations[lang].titre }}</p>
             <p>
               {{ projet.translations[lang].accroche }}
-              
             </p>
             <!-- <tag-labels :data="projet"></tag-labels> -->
             <img
@@ -67,7 +66,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style scoped lang="sass">
 .nav-intro >>> *
   width: var(--body)
 
@@ -94,7 +93,8 @@ p
   text-decoration: underline
   color: var(--principale)
 
-// img:hover
+  
+  // img:hover
 
 .thumbnail
   margin-top: var(--gutter)
@@ -109,9 +109,8 @@ p
 
   margin-bottom: calc(var(--gutter) * 2)
 
-
-  .projet:hover &
-    border: calc(var(--gutter) * 1) solid var(--interaction)
+.projet:hover
+  border: calc(var(--gutter) * 1) solid var(--interaction)
 
 // li::before
   /* content: 'pastille'; */
