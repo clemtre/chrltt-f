@@ -48,7 +48,8 @@ export default {
   /* flex-wrap: wrap; */
   border: 1px solid black
   border-left: none
-  padding: 10px
+  padding: var(--gutter)
+  margin-top: calc(var(--gutter) * 3)
   padding-left: 0
   gap: calc(var(--gutter))
   @media screen and (max-width: 1020px)
@@ -58,8 +59,11 @@ export default {
   background: lightgrey
   border: none
   position: absolute
-  left: calc(100% - 30px)
-  transform: translateY(-31px)
+  left: var(--gutter)
+  transform: translateY(-30px)
+  background-color: white
+  border-right:1px solid black 
+  border-top:1px solid black 
   width: 20px
   height: 20px
 
@@ -86,12 +90,11 @@ h3
 
 hr
   /* margin-top: 20px; */
+  border-top: 0.5px solid pink
   width: 100%
 
 hr,
 .bio >>> hr
-  border: none
-  border-top: 0.5px solid black
 
 
   &
