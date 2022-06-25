@@ -51,15 +51,18 @@ export const mutations = {
 	SORT_FETCH(state, data) {
 			// console.log(document.documentElement.style)
 
-
+		data.Projets.data.forEach(e => {
+			console.log(e)	
+		})
 		for(const projet of data.Projets.data){
 			projet.visited = false
 			for(const tag of projet.tags){
 				tag.tags_CLEAN = data.Tags.data.find((x) => x.id === tag.tags_id)
 			}
-			if(projet.translations.length != 2){
-				projet.translations[1] = projet.translations[0]
-			}
+//			if(projet.translations.length != 2){
+//				projet.translations[1] = projet.translations[0]
+//			}
+			sortByKey(projet.translations, "languages_code")
 		}
 		for(const tag of data.Tags.data){
 			tag.isSelected = false
@@ -87,4 +90,12 @@ export const actions = {
 		}
 		commit('TAGS_INIT', this.state.ui[1])
 	}
+}
+
+function sortByKey(array, key){
+	return array.sort(function(a,b) {
+		let x = a[key]
+		let y = b[key]
+		return ((x>y) ? -1 : ((x > y) ? 1 : 0))
+	})
 }
