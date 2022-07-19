@@ -27,6 +27,9 @@ img {
     max-width: 100%;
     pointer-events: none;
 }
+img:hover {
+    pointer-events: none;
+}
 
 
 h1 {

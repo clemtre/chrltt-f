@@ -6,7 +6,7 @@
     ></div>
     <site-bio v-show="$store.state.ui[2].on"></site-bio>
     <div class="projet-ctn">
-      <ul class="projet" v-for="(projet, id) of ProjetsFiltered" :key="id">
+      <ul class="projet" v-for="(projet, ordre) of ProjetsFiltered" :key="ordre">
         <nuxt-link :to="projet.slug">
           <li>
             <p class="titre">{{ projet.translations[lang].titre }}</p>
@@ -71,44 +71,55 @@ export default {
   width: var(--body)
 
 .projet-ctn
-  gap: calc(var(--gutter) * 2)
+  gap: 10px 20px
   display: flex
   flex-direction: row
   flex-wrap: wrap
+  justify-content: flex-start
   margin-left: var(--gutter)
+  // margin-right: auto
 
 a
   text-decoration: none
 
 li
-  width: 100%
+  // max-width: min-content
 
 p
   line-height: 18px
   margin: 0
   color: var(--noir)
-  max-width: 400px
+  // max-width: 400px
+  width: auto
 
 .titre
   text-decoration: underline
+  margin-bottom: 2px
   color: var(--principale)
+  padding-top: var(--gutter)
 
   
   // img:hover
 
 .thumbnail
   margin-top: var(--gutter)
-  max-height: 500px
+  // max-height: 400px
   /* width: 100%; */
   object-fit: contain
   /* box-sizing: border-box; */
   /* transition: 0.05s linear; */
-  box-sizing: border-box
   border: 0 solid var(--interaction)
   margin: calc(var(--gutter) * 2)
   margin-left: calc( var(--gutter) * -1 )
+  box-sizing: content-box
+  width: 500px
 .projet:hover
-  border: calc(var(--gutter) * 1) solid var(--interaction)
+  border: 2px solid var(--noir)
+  border-right: 1px solid var(--noir)
+  border-left: none !important
+  margin: -2px
+  margin-left: 0
+  // padding-left: 0
 
 // li::before
   /* content: 'pastille'; */
@@ -118,8 +129,9 @@ ul
   margin: 0
 
 .projet
+  // width: calc(min(400px, 100%))
   /* height: 300px; */
-  width: auto
+  transition: all .2s
 
 // @for $a from 1 through 20
 //   .thumbnail:nth-of-type(#{$a}n)

@@ -47,6 +47,8 @@ export default {
   flex-direction: row
   /* flex-wrap: wrap; */
   border: 1px solid black
+  border-top: 2px solid black
+  border-bottom: 2px solid black
   border-left: none
   padding: var(--gutter)
   margin-top: calc(var(--gutter) * 3)
@@ -55,6 +57,8 @@ export default {
   @media screen and (max-width: 1020px)
     flex-wrap: wrap
 
+
+
 #close
   background: lightgrey
   border: none
@@ -62,11 +66,12 @@ export default {
   left: var(--gutter)
   transform: translateY(-30px)
   background-color: white
-  border-right:1px solid black 
-  border-top:1px solid black 
+  border-right: 1px solid black
+  border-top: 2px solid black
   width: 20px
   height: 20px
-
+  &:hover
+    cursor: pointer
 /* right: var(--gutter); */
   /* top: var(--gutter) */
 
@@ -88,18 +93,16 @@ h3
 .force-left
   float: left
 
-hr
+.bio >>> hr
   /* margin-top: 20px; */
-  border-top: 0.5px solid pink
+  border-top: 0.5px solid pink !important
   width: 100%
 
 hr,
 .bio >>> hr
 
-
-  &
-    width: calc(100% - var(--gutter))
-    margin: 10px
-    margin-left: 0
-    margin-right: 0
+  width: calc(100% - var(--gutter))
+  margin: 10px
+  margin-left: 0
+  margin-right: 0
 </style>
