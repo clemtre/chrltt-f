@@ -69,6 +69,7 @@ export default {
 <style scoped lang="sass">
 .nav-intro >>> *
   width: var(--body)
+  max-width: 99%
 
 .projet-ctn
   gap: 10px 20px
